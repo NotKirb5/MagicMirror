@@ -58,7 +58,6 @@ Temporary Items
 .Trash-*
 
 # Ignore all modules except the default modules.
-/modules/**
 !/modules/default
 !/modules/default/**
 !/modules/README.md**
@@ -83,3 +82,4 @@ css/custom.css
 # Ignore positions file (#3518)
 js/positions.js
 
+css/custom.css
