@@ -50,9 +50,8 @@ Module.register("MMM-background", {
     if (notification === "bg") {
       this.setBackground(payload);
       setTimeout(()=>{
-        console.log("newbg")
         this.sendSocketNotification('newbg')
-      },500000)
+      },5000)
     }
   },
 

@@ -10,15 +10,16 @@ async function readbgs() {
 
 async function dimbg(bg){
     const dir = path.join(__dirname,bg)
+    const ext = dir.split('.')[1]
     const img = sharp(dir)
 
     const buffer = await img
         .modulate({brightness:.5})
-        .toFormat('png')
+        .toFormat(ext)
         .toBuffer()
 
     const base64 = buffer.toString('base64');
-    const mimetype = 'image/png';
+    const mimetype = `image/${ext}`;
     const dataurl = `data:${mimetype};base64,${base64}`;
     return dataurl
 }
@@ -29,7 +30,6 @@ module.exports = NodeHelper.create({
     console.log("Node helper for MMM-background started");
   },
     async socketNotificationReceived(notification,payload){
-            console.log('hi',notification)
         if (notification == 'newbg'){
             try {
                 const bgs = await readbgs()
