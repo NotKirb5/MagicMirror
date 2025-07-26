@@ -43,7 +43,7 @@ Module.register("MMM-background", {
         bg.style.transition = 'opacity 1s ease-in-out';
         bg.style.opacity = 1
     },300)
-    
+
     },
 
   socketNotificationReceived(notification, payload) {
@@ -51,7 +51,7 @@ Module.register("MMM-background", {
       this.setBackground(payload);
       setTimeout(()=>{
         this.sendSocketNotification('newbg')
-      },5000)
+      },50000)
     }
   },
 
