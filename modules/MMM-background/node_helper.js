@@ -14,7 +14,7 @@ async function dimbg(bg){
     const img = sharp(dir)
 
     const buffer = await img
-        .modulate({brightness:.5})
+        .modulate({brightness:.7})
         .toFormat(ext)
         .toBuffer()
 
